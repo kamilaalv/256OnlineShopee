@@ -98,3 +98,130 @@ $(document).ready(function(){
 
 
 });
+
+/*Login Register Form*/
+//validation
+/*function validateForm() {
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+    const success = document.querySelector("#success");
+    const errorNodes = document.querySelectorAll(".error");
+  
+    let errorFlag = false;
+  
+    clearMessages();
+    if (nameInput.value == "") {
+      errorNodes[0].innerText = "Name cannot be blank";
+      nameInput.classList.add("error-border");
+      errorFlag = true;
+    }
+  
+    if(!emailIsValid(email.value))
+    {
+      errorNodes[1].innerText = "Invalid email address";
+      email.classList.add("error-border");
+      errorFlag = true;
+    }
+  
+    if(message.value == "")
+    {
+      errorNodes[2].innerText = "Please enter a message";
+      message.classList.add("error-border");
+      errorFlag = true;
+    }
+  
+    if(!errorFlag)
+    {
+      success.innerText="Success!";
+    }
+  
+  }
+  
+  function clearMessages(){
+    const email = document.querySelector("#email");
+    const password = document.querySelector("#password");
+    const errorNodes = document.querySelectorAll(".error");
+    for(i = 0; i < 3; i++){
+      errorNodes[i].innerText = "";   
+    }
+    password.classList.remove("error-border");
+    email.classList.remove("error-border");
+   
+  }
+  
+  function emailIsValid(email){
+    let pattern= /\S+@\S+\.\S+/;
+    return pattern.test(email);
+  }*/
+  
+  //password toggle
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#password');
+
+  togglePassword.addEventListener('click', function (e) {
+    // toggle the type attribute
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    // toggle the eye slash icon
+    this.classList.toggle('fa-eye-slash');
+});
+
+//sign in sign up buttons  //buttons do not work
+function changeForm(ind){
+    let form = document.querySelector(".loginForm .changes");
+    let signIn = document.querySelector(".loginForm #signIn");
+    let signUp = document.querySelector(".loginForm #signUp");;
+    let submitBtn = document.querySelector(".submitForm")
+    //console.log("In " + signIn.classList);
+   console.log("Up " + signUp.classList);
+    if(ind == 0){
+     form.innerHTML = `
+ <div class="py-2 changes">
+     <input type="text" id="email" placeholder="Email">
+     <div class="er">
+       <small class="error"></small>
+     </div>
+     <input type="password" name="password" autocomplete="current-password" id="password" placeholder="Password">
+ <i class="far fa-eye" id="togglePassword"></i>
+ <div class="er">
+   <small class="error"></small>
+ </div>
+ </div>`;
+    
+        signIn.classList.add("notActiveBtn");
+        signUp.classList.remove("notActiveBtn");
+        submitBtn.innerHTML = "Sign In";
+    }
+ else if(ind == 1){
+    form.innerHTML = `<div class="py-2 changes">
+    <input type="text" id="email" placeholder="Email">
+    <div class="er">
+      <small class="error"></small>
+    </div>
+
+    <input type="text" id="name" placeholder="Name">
+    <div class="er">
+      <small class="error"></small>
+    </div>
+    <input type="text" id="lname" placeholder="Last Name">
+    <div class="er">
+      <small class="error"></small>
+    </div>
+    <input type="password" name="password" autocomplete="current-password" id="password" placeholder="Password">
+    <i class="far fa-eye" id="togglePassword"></i>
+    <div class="er">
+        <small class="error"></small>
+    </div>
+    <input type="password" name="password" autocomplete="current-password"  id="confPassword" placeholder=" Confirm Password">
+    <i class="far fa-eye" id="togglePassword"></i>
+    <div class="er">
+        <small class="error"></small>
+    </div>
+</div>`;
+    signUp.classList.add("notActiveBtn");
+    signIn.classList.remove("notActiveBtn");
+    submitBtn.innerHTML= "Sign Up";
+ }
+    
+    
+}

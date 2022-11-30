@@ -61,11 +61,7 @@ button, button:focus {
   background:  #F7F7F2;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #C5D86D;
-  border-color: #C5D86D;
-}
+
 
 .flex{
   display: flex;
@@ -131,3 +127,85 @@ button, button:focus {
     font-size:15px !important;
   }
 }
+
+
+/* form.loginForm */
+#overlay{
+  background-color: var(--primary-color);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+form.loginForm{
+  max-width:420px;
+  width: 90%;
+  padding: 20px;
+  background-color: white;
+  color: var(--primary-color);
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+form.loginForm.flex{
+    margin-top: 40px;
+    flex-direction: column;
+    position:relative;
+}
+
+
+form.loginForm input, form.loginForm textarea {
+  width: 80%;
+  padding: 10px;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+form.loginForm input[type="text"]:focus, form.loginForm input[type="password"]:focus {
+    border-bottom: 1px solid #000000;
+}
+
+form.loginForm input, form.loginForm button {
+  width: 100%;
+  max-width: 600px;
+}
+
+form.loginForm button {
+  margin-top: 30px;
+}
+.error {
+  color: red;
+  margin-right: 230px;
+}
+ .error-border{
+    border-bottom: 1px solid red;
+ }
+
+ #success {
+    color: #28A745;
+    padding-top: 10px;
+    text-align: center;
+ }
+
+ form.loginForm .submitOptionBtn {
+  border-radius: 0.5rem;
+  margin: 25px 5px;
+  max-width: 50%;
+ }
+ form.loginForm .notActiveBtn {
+  background-color: #e3ebf7;
+  color: #3b71ca;
+ }
+
+ form.loginForm #togglePassword {
+   margin-left: -30px;
+   cursor: pointer;
+   position: absolute;
+ }
+
+
+
+ 
