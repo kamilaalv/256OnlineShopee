@@ -74,41 +74,25 @@
           <div id="overlay" class="flex">
             <form method="post" class="loginForm" onsubmit="event.preventDefault(); validateForm()"class="flex">
                 <div class="flex">
-                    <button type="button" onclick="changeForm(0)" class="btn btn-primary submitOptionBtn" id="signIn">Sign In </button>
-                    <button type="button" onclick="changeForm(1)" class="btn btn-primary submitOptionBtn notActiveBtn" id="signUp "> Sign Up </button>
+                    <button type="button" onclick="changeForm(0)" class="btn btn-primary submitOptionBtn signIn">Sign In </button>
+                    <button type="button" onclick="changeForm(1)" class="btn btn-primary submitOptionBtn signUp "> Sign Up </button>
                 </div>
                 <div class="py-2 changes">
-                    <input type="text" id="email" placeholder="Email">
-                    <div class="er">
-                      <small class="error"></small>
-                    </div>
-
-                    <input type="text" id="name" placeholder="Name">
-                    <div class="er">
-                      <small class="error"></small>
-                    </div>
-                    <input type="text" id="lname" placeholder="Last Name">
-                    <div class="er">
-                      <small class="error"></small>
-                    </div>
-                    <input type="password" name="password" autocomplete="current-password" id="password" placeholder="Password">
-                    <i class="far fa-eye" id="togglePassword"></i>
-                    <div class="er">
-                        <small class="error"></small>
-                    </div>
-                    <input type="password" name="password" autocomplete="current-password"  id="confPassword" placeholder=" Confirm Password">
-                    <i class="far fa-eye" id="togglePassword"></i>
-                    <div class="er">
-                        <small class="error"></small>
-                    </div>
+                  <input type="text" id="email" placeholder="Email">
+                  <div class="er">
+                    <small class="error"></small>
+                  </div>
+                  <input type="password" name="password" autocomplete="current-password" id="password" placeholder="Password">
+              <i class="far fa-eye" id="togglePassword"></i>
+              <div class="er">
+                <small class="error"></small>
+              </div>
                 </div>
-                
                 <span class="test"></span>
                 <div>
                   <button type="button" class="btn btn-primary submitForm">Sign In</button>
                   <p id="success"></p>
                 </div>
-      
             </form>
           </div>
           <!-- !Login Form -->

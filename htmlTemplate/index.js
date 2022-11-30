@@ -166,18 +166,16 @@ $(document).ready(function(){
     this.classList.toggle('fa-eye-slash');
 });
 
-//sign in sign up buttons  //buttons do not work
+//sign in sign up buttons 
 function changeForm(ind){
     let form = document.querySelector(".loginForm .changes");
-    let signIn = document.querySelector(".loginForm #signIn");
-    let signUp = document.querySelector(".loginForm #signUp");;
+    let signIn = document.querySelector(".loginForm .signIn");
+    let signUp = document.querySelector(".loginForm .signUp");;
     let submitBtn = document.querySelector(".submitForm")
-    //console.log("In " + signIn.classList);
-   console.log("Up " + signUp.classList);
+    
     if(ind == 0){
-     form.innerHTML = `
- <div class="py-2 changes">
-     <input type="text" id="email" placeholder="Email">
+       
+     form.innerHTML = `<input type="text" id="email" placeholder="Email">
      <div class="er">
        <small class="error"></small>
      </div>
@@ -185,16 +183,17 @@ function changeForm(ind){
  <i class="far fa-eye" id="togglePassword"></i>
  <div class="er">
    <small class="error"></small>
- </div>
  </div>`;
-    
-        signIn.classList.add("notActiveBtn");
-        signUp.classList.remove("notActiveBtn");
         submitBtn.innerHTML = "Sign In";
+        signUp.style.backgroundColor = "#e3ebf7";
+        signUp.style.color = "#3b71ca";
+
+        signIn.style.backgroundColor = "#007bff";
+        signIn.style.color = "#fff";
     }
  else if(ind == 1){
-    form.innerHTML = `<div class="py-2 changes">
-    <input type="text" id="email" placeholder="Email">
+    
+    form.innerHTML = `<input type="text" id="email" placeholder="Email">
     <div class="er">
       <small class="error"></small>
     </div>
@@ -216,12 +215,16 @@ function changeForm(ind){
     <i class="far fa-eye" id="togglePassword"></i>
     <div class="er">
         <small class="error"></small>
-    </div>
-</div>`;
-    signUp.classList.add("notActiveBtn");
-    signIn.classList.remove("notActiveBtn");
+    </div>`;
+   
     submitBtn.innerHTML= "Sign Up";
+    signIn.style.backgroundColor = "#e3ebf7";
+    signIn.style.color = "#3b71ca";
+       
+    signUp.style.backgroundColor = "#007bff";
+    signUp.style.color = "#fff";
+   
  }
-    
+
     
 }

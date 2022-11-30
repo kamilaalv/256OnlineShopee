@@ -195,7 +195,7 @@ form.loginForm button {
   margin: 25px 5px;
   max-width: 50%;
  }
- form.loginForm .notActiveBtn {
+ form.loginForm .submitOptionBtn.signUp {
   background-color: #e3ebf7;
   color: #3b71ca;
  }
