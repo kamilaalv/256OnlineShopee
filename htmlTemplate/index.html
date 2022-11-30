@@ -17,13 +17,14 @@
 
     <!-- Custom CSS file -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sass/utils.css">
 </head>
 <body>
 
     <!-- start #header -->
         <header id="header">
 
-            <!-- Primary Navigation -->
+            <!-- Login Area -->
             <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
                 <a class="navbar-brand" href="#">Mobile Shopee</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,39 +32,30 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav m-auto font-rubik">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#" style="color:rgb(239, 87, 87);">On Sale</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link">Products </a>
-                    </li>
-                     
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Coming Soon</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                      </li>
+                   
                   </ul>
-                  <form action="#" class="font-size-14 font-rale">
-                      <a href="#" class="py-2 mx-2">
-                        <span class="font-size-16 px-2 text-white"><i class="fas fa-filter"></i></span>
-                      </a>
-                      <a href="#" class="py-2 rounded-pill color-primary-bg">
+                  <form action="#" class="font-size-14 font-rale font-rubik">
+                    <a href="#" class="py-2 mx-2" name="account" id="accountSignIn">
+                      <span class="font-size-16 px-2 text-white"><i class="fas fa-user mx-2"></i>My Account</span>  <!-- if not signed in change My Account to Sign in-->
+                    </a>
+                     <a href="#" class="py-2 mx-2" name="wishlist">
+                      <span class="font-size-16 px-2 text-white"><i class="fas fa-heart mx-2"></i>Wishlist</span>
+                    </a>
+                      <a href="#" class="py-2 mx-2 rounded-pill color-primary-bg">
                         <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
                         <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
                       </a>
                   </form>
                 </div>
               </nav>
-               <!-- !Primary Navigation -->
+               <!-- !Login Area -->
 
         </header>
     <!-- !start #header -->
 
     <!-- start #main-site -->
         <main id="main-site">
-
+          
           <!-- Owl-carousel -->
             <section id="banner-area">
               <div class="owl-carousel owl-theme">
@@ -79,6 +71,22 @@
               </div>
             </section>
           <!-- !Owl-carousel -->
+          <!--Primary Navigation-->
+          <nav class="primaryNav flex" >
+              <ul class="menuItems m-auto font-rubik flex">
+                <li><a href='#' data-item='On Sale' style="color:rgb(239, 87, 87);">On Sale</a></li>
+                <li><a href='#' data-item='Products'>Products</a></li>
+                <li><a href='#' data-item='Coming Soon'>Coming Soon</a></li>
+                <li><a href='#' data-item='Blog'>Blog</a></li>
+                <li><a href='#' data-item='Contact'>Contact</a></li>
+              </ul>
+              <form action="#" class="font-size-14 font-rale">
+                  <a href="#" class="py-2 mx-2">
+                    <span class="font-size-16 px-2 text-dark"><i class="fas fa-filter"></i></span>
+                  </a>
+              </form>
+          </nav>
+      <!-- !Primary Navigation -->
 
           <!-- Top Sale -->
           <section id="top-sale">

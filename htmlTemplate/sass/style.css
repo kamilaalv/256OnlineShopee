@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Raleway&family=Rubik&display=swap");
 /*              Sass Template           */
 /*  global classes  */
-
 button, button:focus {
   outline: none !important;
   box-shadow: none !important;
@@ -46,37 +45,20 @@ button, button:focus {
 }
 
 .color-second {
-  color:  #343a40;
+  color: #343a40;
 }
 
 .color-second-bg {
-  background:  #343a40;
+  background: #343a40;
 }
 
 .color-yellow {
-  color:  #F7F7F2;
+  color: #F7F7F2;
 }
 
 .color-yellow-bg {
-  background:  #F7F7F2;
+  background: #F7F7F2;
 }
-
-.btn-primary {
-  color: #fff;
-  background-color: #C5D86D;
-  border-color: #C5D86D;
-}
-
-.flex{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-/*primary nav template*/
 
 /*  top sale template   */
 #top-sale .owl-carousel .item .product a {
@@ -99,7 +81,7 @@ button, button:focus {
 #top-sale .owl-carousel .owl-nav button.owl-prev span,
 #top-sale .owl-carousel .owl-nav button.owl-next span {
   font-size: 35px;
-  color: #003859;
+  color: #C5D86D;
   padding: 0 1rem;
 }
 #top-sale .owl-carousel .owl-nav button.owl-prev span {
@@ -116,18 +98,4 @@ button, button:focus {
 #special-price .grid .grid-item {
   margin-right: 1.2rem;
   margin-top: 1rem;
-}
-
-/*# sourceMappingURL=style.css.map */
-@media only screen and (max-width:768px){
-  .menuItems.flex{
-    flex-direction: column;
-  }
-  .menuItems li{
-    margin:10px !important;
-  }
-
-  .menuItems li a{
-    font-size:15px !important;
-  }
-}
+}/*# sourceMappingURL=style.css.map */

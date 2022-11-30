@@ -2,7 +2,7 @@ $(document).ready(function(){
 
     // banner owl carousel
     $("#banner-area .owl-carousel").owlCarousel({
-        dots: true,
+        dots: false,
         items: 1
     });
 
