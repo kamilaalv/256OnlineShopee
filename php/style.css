@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Raleway&family=Rubik&display=swap");
+/*              Sass Template           */
+/*  global classes  */
+
+button, button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* typography classes */
+.font-baloo {
+  font-family: "Baloo Thambi 2", cursive;
+}
+
+.font-rale {
+  font-family: "Raleway", cursive;
+}
+
+.font-rubik {
+  font-family: "Rubik", cursive;
+}
+
+.font-size-12 {
+  font-size: 12px;
+}
+
+.font-size-14 {
+  font-size: 14px;
+}
+
+.font-size-16 {
+  font-size: 16px;
+}
+
+.font-size-20 {
+  font-size: 20px;
+}
+
+/* Color Template  */
+.color-primary {
+  color: #C5D86D;
+}
+
+.color-primary-bg {
+  background: #C5D86D;
+}
+
+.color-second {
+  color:  #343a40;
+}
+
+.color-second-bg {
+  background:  #343a40;
+}
+
+.color-yellow {
+  color:  #F7F7F2;
+}
+
+.color-yellow-bg {
+  background:  #F7F7F2;
+}
+
+
+
+.flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/*primary nav template*/
+
+/*  top sale template   */
+#top-sale .owl-carousel .item .product a {
+  overflow: hidden;
+}
+#top-sale .owl-carousel .item .product img {
+  transition: transform 0.5s ease;
+}
+#top-sale .owl-carousel .item .product img:hover {
+  transform: scale(1.1);
+}
+#top-sale .owl-carousel .owl-nav button {
+  position: absolute;
+  top: 30%;
+  outline: none;
+}
+#top-sale .owl-carousel .owl-nav button.owl-prev {
+  left: 0;
+}
+#top-sale .owl-carousel .owl-nav button.owl-prev span,
+#top-sale .owl-carousel .owl-nav button.owl-next span {
+  font-size: 35px;
+  color: #003859;
+  padding: 0 1rem;
+}
+#top-sale .owl-carousel .owl-nav button.owl-prev span {
+  margin-left: -4rem;
+}
+#top-sale .owl-carousel .owl-nav button.owl-next {
+  right: 0;
+}
+#top-sale .owl-carousel .owl-nav button.owl-next span {
+  margin-right: -4rem;
+}
+
+/*   Special Price Section Template */
+#special-price .grid .grid-item {
+  margin-right: 1.2rem;
+  margin-top: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */
+@media only screen and (max-width:768px){
+  .menuItems.flex{
+    flex-direction: column;
+  }
+  .menuItems li{
+    margin:10px !important;
+  }
+
+  .menuItems li a{
+    font-size:15px !important;
+  }
+}
+
+
+/* form.loginForm */
+#overlay{
+  background-color: var(--primary-color);
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+form.loginForm{
+  max-width:420px;
+  width: 90%;
+  padding: 20px;
+  background-color: white;
+  color: var(--primary-color);
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+form.loginForm.flex{
+    margin-top: 40px;
+    flex-direction: column;
+    position:relative;
+}
+
+
+form.loginForm input, form.loginForm textarea {
+  width: 80%;
+  padding: 10px;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
+  border: none;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+form.loginForm input[type="text"]:focus, form.loginForm input[type="password"]:focus {
+    border-bottom: 1px solid #000000;
+}
+
+form.loginForm input, form.loginForm button {
+  width: 100%;
+  max-width: 600px;
+}
+
+form.loginForm button {
+  margin-top: 30px;
+}
+.error {
+  color: red;
+  margin-right: 230px;
+}
+ .error-border{
+    border-bottom: 1px solid red;
+ }
+
+ #success {
+    color: #28A745;
+    padding-top: 10px;
+    text-align: center;
+ }
+
+ form.loginForm .submitOptionBtn {
+  border-radius: 0.5rem;
+  margin: 25px 5px;
+  max-width: 50%;
+ }
+ form.loginForm .submitOptionBtn.signUp {
+  background-color: #e3ebf7;
+  color: #3b71ca;
+ }
+
+ form.loginForm #togglePassword {
+   margin-left: -30px;
+   cursor: pointer;
+   position: absolute;
+ }
+
+
+
+ 

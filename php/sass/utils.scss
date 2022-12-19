@@ -1,0 +1,33 @@
+/* Primary Nav */
+.primaryNav {
+    margin: 0;
+    background: #f9f9f9;
+    padding: 16px;
+    .menuItems {
+      list-style: none;
+      display: flex;
+  
+      li {
+        margin: 50px;
+  
+        a {
+          text-decoration: none;
+          color: #8f8f8f;
+          font-size: 24px;
+          font-weight: 400;
+          transition: all 0.5s ease-in-out;
+          position: relative;
+         
+         
+          &:hover {
+            &::before {
+              width: 100%;
+              transition: all 0.5s ease-in-out;
+            }
+            font-size: 27px;
+            border-bottom: solid #8f8f8f;
+          }
+        }
+      }
+    }
+  }
