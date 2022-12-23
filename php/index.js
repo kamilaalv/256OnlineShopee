@@ -185,6 +185,7 @@ function changeForm(ind){
    <small class="error"></small>
  </div>`;
         submitBtn.innerHTML = "Sign In";
+        submitBtn.value = 0;
         signUp.style.backgroundColor = "#e3ebf7";
         signUp.style.color = "#3b71ca";
 
@@ -193,12 +194,12 @@ function changeForm(ind){
     }
  else if(ind == 1){
     
-    form.innerHTML = `<input type="text" id="email" placeholder="Email">
+    form.innerHTML = `<input type="text" id="email" name="email" placeholder="Email">
     <div class="er">
       <small class="error"></small>
     </div>
 
-    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="name" placeholder="First Name">
     <div class="er">
       <small class="error"></small>
     </div>
@@ -206,25 +207,96 @@ function changeForm(ind){
     <div class="er">
       <small class="error"></small>
     </div>
-    <input type="password" name="password" autocomplete="current-password" id="password" placeholder="Password">
+    <input type="password" autocomplete="current-password" id="password" placeholder="Password">
     <i class="far fa-eye" id="togglePassword"></i>
     <div class="er">
         <small class="error"></small>
     </div>
-    <input type="password" name="password" autocomplete="current-password"  id="confPassword" placeholder=" Confirm Password">
+    <input type="password" autocomplete="current-password"  id="confPassword" placeholder="Confirm Password">
     <i class="far fa-eye" id="togglePassword"></i>
     <div class="er">
         <small class="error"></small>
     </div>`;
    
     submitBtn.innerHTML= "Sign Up";
+    submitBtn.value = 1;
     signIn.style.backgroundColor = "#e3ebf7";
     signIn.style.color = "#3b71ca";
        
     signUp.style.backgroundColor = "#007bff";
     signUp.style.color = "#fff";
-   
  }
+}
 
-    
+function submitValidateAndInitiate(){
+    if ($("submitBtn").val == 0) {
+        $(document).ready(function () {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if (!email){
+                $('#success').html("Please enter your email!");
+            } else if (!password) {
+                $("#success").html("Please enter your password!");
+            } else {
+                $.post("dataretrieval.php", {
+                whatToDo: 'select',
+                email: email,
+                password: password
+                }, function() {
+                    $("#success").html(data);
+                });
+            }
+        });
+    } else {
+        $(document).ready(function () {
+            var email = document.getElementById("email").value;
+            var fname = document.getElementById("name").value;
+            var lname = document.getElementById("lname").value;
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confPassword").value;
+
+            if (!email){
+                $("#success").html("Please enter your email!");
+            } else if (!fname){
+                $("#success").html("Please enter your first name!");
+            } else if (!lname){
+                $("#success").html("Please enter your last name!");
+            } else if (!password){
+                $("#success").html("Please enter a password!");
+            } else if (!confirm_password) {
+                $("#success").html("Please confirm your password!");
+            } else if (confirm_password != password){
+                $("#success").html("Your passwords do not match!");
+            } else {
+                var verification_code = Math.floor(Math.random() * (89999)) + 10000;
+
+                $.post("dataretrieval.php", {
+                whatToDo: 'insert',
+                email: email,
+                fname: fname,
+                lname: lname,
+                password: password,
+                verification: verification_code
+                }, function(data, status) {
+                    if (status == 'success'){
+                        document.getElementById("success").innerHTML = "<input type='number' placeholder='Check your email for the verification code' id='verify'>";
+                        document.getElementById("verificationButton").innerHTML = "<button id='verifyBtn'>Verify</button>";
+
+                        $("#verifyBtn").addEventListener("click", function(){
+                            if (document.getElementById("verify").value == verification_code){
+                                $.post("verify.php", {
+                                    email: email
+                                }, function (data, status) {
+                                    if (status == 'success'){
+                                        changeForm(0);
+                                        $("#success").html(data);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
+            }   
+        })
+    }
 }

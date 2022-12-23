@@ -18,6 +18,9 @@
     <!-- Custom CSS file -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="sass/utils.css">
+
+    <script src='./assets/jQuery/jquery-3.6.3.js'></script>
+
 </head>
 <body>
 
@@ -35,16 +38,20 @@
                    
                   </ul>
                   <form action="#" class="font-size-14  font-rubik">
-                    <a href="#" class="py-2 mx-2" name="account" id="accountSignIn">
-                      <span class="font-size-16 px-2 text-white"><i class="fas fa-user mx-2"></i>My Account</span>  <!-- if not signed in change My Account to Sign in-->
+                    <a href='#' class="py-2 mx-2" name="account" id="accountSignIn">
+                      <span class="font-size-16 px-2 text-white"><i class="fas fa-user mx-2"></i><?= isset($_SESSION) ? 'My Account' : 'Sign In' ?></span>  <!-- if not signed in change My Account to Sign in-->
                     </a>
+                    <?php
+                    if (isset($_SESSION)) { 
+                      echo '
                      <a href="#" class="py-2 mx-2" name="wishlist">
                       <span class="font-size-16 px-2 text-white"><i class="fas fa-heart mx-2"></i>Wishlist</span>
                     </a>
                       <a href="cart.php" class="py-2 mx-2 rounded-pill color-primary-bg">
                         <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
                         <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
-                      </a>
+                      </a>';
+                    } ?>
                   </form>
                 </div>
               </nav>
@@ -71,8 +78,9 @@
             </section>
           <!-- !Owl-carousel -->
         <!-- Login Form-->
+        <!-- in form onsubmit: onsubmit="event.preventDefault(); validateForm()" -->
           <div id="overlay" class="flex">
-            <form method="post" class="loginForm" onsubmit="event.preventDefault(); validateForm()"class="flex">
+            <form method="post" class="loginForm" class="flex">
                 <div class="flex">
                     <button type="button" onclick="changeForm(0)" class="btn btn-primary submitOptionBtn signIn">Sign In </button>
                     <button type="button" onclick="changeForm(1)" class="btn btn-primary submitOptionBtn signUp "> Sign Up </button>
@@ -80,18 +88,19 @@
                 <div class="py-2 changes">
                   <input type="text" id="email" placeholder="Email">
                   <div class="er">
-                    <small class="error"></small>
+                    <small id="emailEr" class="error"></small>
                   </div>
-                  <input type="password" name="password" autocomplete="current-password" id="password" placeholder="Password">
+                  <input type="password" autocomplete="current-password" id="password" placeholder="Password">
               <i class="far fa-eye" id="togglePassword"></i>
               <div class="er">
-                <small class="error"></small>
+                <small id="passEr" class="error"></small>
               </div>
                 </div>
                 <span class="test"></span>
                 <div>
-                  <button type="button" class="btn btn-primary submitForm">Sign In</button>
+                  <button type="button" onclick="submitValidateAndInitiate()" id="submitBtn" class="btn btn-primary submitForm">Sign In</button>
                   <p id="success"></p>
+                  <p id="verificationButton"></p>
                 </div>
             </form>
           </div>
@@ -144,7 +153,7 @@
                 <p class="font-size-14 font-rale text-white-50">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus, deserunt.</p>
               </div>
               <div class="col-lg-4 col-12">
-                <h4 class="font-rubik font-size-20">Newslatter</h4>
+                <h4 class="font-rubik font-size-20">Newsletter</h4>
                 <form class="form-row">
                   <div class="col">
                     <input type="text" class="form-control" placeholder="Email *">
@@ -180,7 +189,7 @@
         </div>
     <!-- !start #footer -->
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="./assets/jQuery/jquery-3.6.3.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 

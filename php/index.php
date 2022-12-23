@@ -1,10 +1,8 @@
 <?php
-  if (isset($_GET)){
-    extract($_GET);
-  }
-?>
 
-<!DOCTYPE html>
+
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -42,7 +40,7 @@
                   </ul>
                   <form action="#" class="font-size-14 font-rubik">
                     <a href="login.php" class="py-2 mx-2" name="account" id="accountSignIn">
-                      <span class="font-size-16 px-2 text-white"><i class="fas fa-user mx-2"></i>My Account</span>  <!-- if not signed in change My Account to Sign in-->
+                      <span class="font-size-16 px-2 text-white"><i class="fas fa-user mx-2"></i><?= isset($_SESSION) ? $_SESSION['fname']." ".$_SESSION['lname'] : 'Sign In' ?></span>  <!-- if not signed in change My Account to Sign in-->
                     </a>
                      <a href="#" class="py-2 mx-2" name="wishlist">
                       <span class="font-size-16 px-2 text-white"><i class="fas fa-heart mx-2"></i>Wishlist</span>
