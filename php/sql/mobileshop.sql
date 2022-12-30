@@ -75,6 +75,38 @@ INSERT INTO `product` (`product_id`, `pname`, `price`, `rating`, `replacement`, 
 (2, 'Redmi Note 7', 110, 3, NULL, NULL, NULL, NULL, 'On Sale');
 
 -- --------------------------------------------------------
+--------------Table structure for table `product`
+
+DROP TABLE IF EXISTS `product2`;
+CREATE TABLE IF NOT EXISTS `product2` (
+  `product_id` int(11) NOT NULL AUTO_INCREMENT,
+  `pname` varchar(70) DEFAULT NULL,
+  `company` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_turkish_ci NOT NULL,
+  `price` float DEFAULT NULL,
+  `rating` int(1) DEFAULT NULL,
+  `description` varchar(500) DEFAULT NULL,
+  `on_sale` int(1) DEFAULT NULL,
+  `image` varchar(100) NOT NULL,
+  PRIMARY KEY (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Tablo döküm verisi `product2`
+--
+
+INSERT INTO `product2` (`product_id`, `pname`, `company`, `price`, `rating`, `description`, `on_sale`, `image`) VALUES
+(1, 'Samsung Galaxy S6 edge', 'Samsung', 156, 4, 'perfect', 1, '1.png'),
+(2, 'Redmi Note 7 Pro', 'Redmi', 120, 2, 'good', 1, '2.png'),
+(3, 'Redmi Note 7 Pro', 'Redmi', 150, 4, 'perfect', 1, '3.png'),
+(4, 'Samsung Galaxy S7 ', 'Samsung', 110, 2, 'not bad', 1, '12.png'),
+(5, 'iPhone 14 Pro Max', 'Apple', 400, 5, 'excellent', 0, '13.png'),
+(6, 'iPhone 14 Pro', 'Apple', 450, 5, 'excellent', 0, '15.png'),
+(7, 'iPhone 6S Plus', 'Apple', 200, 4, 'very good', 1, '15.png'),
+(8, 'Samsung S22 Ultra', 'Samsung', 500, 4, 'perfect', 0, '8.png'),
+(9, 'Redmi Beauty X9', 'Redmi', 600, 3, 'not bad', 1, '5.png'),
+(10, 'Samsung Galaxy A10', 'Samsung', 230, 4, 'good camera', 1, '11.png');
+COMMIT;
+------------------------------------------------------------------
 
 --
 -- Table structure for table `product_color`
